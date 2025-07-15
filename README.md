@@ -6,18 +6,9 @@ LF is a multi-robot control paradigm to solve point-to-point navigation tasks fo
 - [LaCAM](https://github.com/kei18/lacam3), a <ins>centralized</ins>, discrete, and full-horizon planner for computing collision- and deadlock-free paths rapidly, leveraging recent advances in multi-agent pathfinding (MAPF), and
 - [Freyja](https://github.com/ajshank/Freyja), dynamics-aware, robot-wise <ins>decentralised</ins> trajectory controllers that ensure all robots independently follow their assigned paths reliably.
 
-```mermaid
-graph LR
-A[LaCAM] -- Team Plans --> B([LF-Interface])
-B <-.-> D(Freyja)
-B <-.-> E(Freyja)
-B <-.-> F(Freyja)
-B -- Trigger --> A
-INP[OctoMap<br>Task Config] --> A
-
-style INP fill-opacity:0, stroke-opacity:0;
-style B fill:#FFFFFF33
-```
+<p align="center">
+  <img alt="Concept architecture of LF" src="media/lf-arch.png" width="66%">
+</p>
 
 LF[^1] adds some additional glue to combine the speed of ultra-fast discrete _joint-space_ planners, and the robustness of _on-robot_ trajectory controllers. The planner is no longer a one-shot top-level call, it can be triggered in an MPC-like fashion, where it plans the rest of the trajectory (team trajectories) towards the goals, and the controller executes the first _n_ steps of it. We are "embedding" the planner into a feedback control loop!
 [^1]: Hmm, is "LF" a play on `LF (line feed)` -- the metaphorical end of the line in MAPF+control? Maybe.
