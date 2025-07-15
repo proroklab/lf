@@ -8,15 +8,19 @@ $\color{lightblue}\sf{LF}$ is a multi-robot control paradigm to solve point-to-p
 
 ```mermaid
 graph LR
-A((LaCAM)) -- Team Plans --> B[LF-Interface]
+A[LaCAM] -- Team Plans --> B([LF-Interface])
 B <-.-> D(Freyja)
 B <-.-> E(Freyja)
 B <-.-> F(Freyja)
 B -- Trigger --> A
+INP[OctoMap<br>Task Config] --> A
+
+style INP fill-opacity:0, stroke-opacity:0;
+style B fill:#FFFFFF33
 ```
 
 $\color{lightblue}\sf{LF}$[^1] adds some additional glue to combine the speed of ultra-fast discrete _joint-space_ planners, and the robustness of _on-robot_ trajectory controllers. The planner is no longer a one-shot top-level call, it can be triggered in an MPC-like fashion, where it plans the rest of the trajectory (team trajectories) towards the goals, and the controller executes the first _n_ steps of it. We are "embedding" the planner into a feedback control loop!
-[^1]: Is LF a play on `LF (line feed)` -- the metaphorical end of the line in MAPF+control? Maybe.
+[^1]: Hmm, is LF a play on `LF (line feed)` -- the metaphorical end of the line in MAPF+control? Maybe.
 
 
 <table>
@@ -42,4 +46,5 @@ At the moment, $\color{lightblue}\sf{LF}$ can trigger its planner at upto 20Hz o
 Our implementation does not implicitly define "events" for triggering $\color{lightblue}\sf{LF}$'s planner. The API is exposed for such use-cases.
 
 
-
+### Code
+(in review)
