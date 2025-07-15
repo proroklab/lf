@@ -31,7 +31,9 @@ At the moment, LF can trigger its planner at upto 20Hz on a laptop CPU &mdash; t
 ✔️ **synchronous** (for all agents simultaneously),   
 ✔️ **asynchronous** (for some agents, "lifelong"),   
 ✔️ **periodic** (fixed-rate, MPC-like), or   
-✔️ **sporadic** (event-triggered, based on goal assignment, current tracking performance, or detection of new obstacles).
+✔️ **sporadic** (event-triggered, based on goal assignment, tracking performance, new obstacles etc).
+
+We demonstrate all these use-cases, deployed on teams of 5 [Cambridge Robomaster](https://proroklab.github.io/cambridge-robomaster) ground robots and up to 15 [Sanity](https://openreview.net/pdf?id=i5dKOANPZZ) aerial platforms, with 4 dynamic obstacles and up to 10 static obstacles.
 
 > [!NOTE]
 > Our implementation does not implicitly define "events" for triggering LF's planner. The API is exposed for such use-cases.
@@ -41,4 +43,5 @@ At the moment, LF can trigger its planner at upto 20Hz on a laptop CPU &mdash; t
 (in review)
 
 
+-------
 [^1]: Hmm, is "LF" a play on `LF (line feed)` -- the metaphorical end of the line in MAPF+control? Maybe.
