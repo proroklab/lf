@@ -11,7 +11,7 @@ LF is a multi-robot control paradigm to solve point-to-point navigation tasks fo
 </p>
 
 LF[^1] adds some additional glue to combine the speed of ultra-fast discrete _joint-space_ planners, and the robustness of _on-robot_ trajectory controllers. The planner is no longer a one-shot top-level call, it can be triggered in an MPC-like fashion, where it plans the rest of the trajectory (team trajectories) towards the goals, and the controller executes the first _n_ steps of it. We are "embedding" the planner into a feedback control loop!
-[^1]: Hmm, is "LF" a play on `LF (line feed)` -- the metaphorical end of the line in MAPF+control? Maybe.
+
 
 
 <table>
@@ -39,3 +39,6 @@ At the moment, LF can trigger its planner at upto 20Hz on a laptop CPU &mdash; t
 
 ### Code
 (in review)
+
+
+[^1]: Hmm, is "LF" a play on `LF (line feed)` -- the metaphorical end of the line in MAPF+control? Maybe.
