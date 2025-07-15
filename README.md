@@ -25,11 +25,11 @@ LF[^1] adds some additional glue to combine the speed of ultra-fast discrete _jo
 
 <table>
   <tr>
-    <td><img alt="10 drones flying amidst obstacles" src="/media/10drones.gif" width="100%"/> </td>
+    <td><img alt="10 drones flying amidst obstacles" src="media/10drones.gif" width="100%"/> </td>
     <td>
-      <img alt="4 followers chasing a free target" src="/media/follower.gif" width="50%"/>
+      <img alt="4 followers chasing a free target" src="media/follower.gif" width="50%"/>
       <br>
-      <img alt="10 drones flying around pedestrian" src="/media/lf.gif" width="50%"/>
+      <img alt="10 drones flying around pedestrian" src="media/lf.gif" width="50%"/>
     </td>
   </tr>
 </table>
