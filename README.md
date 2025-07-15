@@ -6,8 +6,29 @@ $\color{lightblue}\sf{LF}$ is a multi-robot control paradigm to solve point-to-p
 - [LaCAM](https://github.com/kei18/lacam3), a <ins>centralized</ins>, discrete, and full-horizon planner for computing collision- and deadlock-free paths rapidly, leveraging recent advances in multi-agent pathfinding (MAPF), and
 - [Freyja](https://github.com/ajshank/Freyja), dynamics-aware, robot-wise <ins>decentralised</ins> trajectory controllers that ensure all robots independently follow their assigned paths reliably.
 
+```mermaid
+graph LR
+A((LaCAM)) -- Team Plans --> B[LF-Interface]
+B <-.-> D(Freyja)
+B <-.-> E(Freyja)
+B <-.-> F(Freyja)
+B -- Trigger --> A
+```
+
 $\color{lightblue}\sf{LF}$[^1] adds some additional glue to combine the speed of ultra-fast discrete _joint-space_ planners, and the robustness of _on-robot_ trajectory controllers. The planner is no longer a one-shot top-level call, it can be triggered in an MPC-like fashion, where it plans the rest of the trajectory (team trajectories) towards the goals, and the controller executes the first _n_ steps of it. We are "embedding" the planner into a feedback control loop!
 [^1]: Is LF a play on `LF (line feed)` -- the metaphorical end of the line in MAPF+control? Maybe.
+
+
+<table>
+  <tr>
+    <td><img alt="10 drones flying amidst obstacles" src="/media/10drones.gif" width="100%"/> </td>
+    <td>
+      <img alt="4 followers chasing a free target" src="/media/follower.gif" width="50%"/>
+      <br>
+      <img alt="10 drones flying around pedestrian" src="/media/lf.gif" width="50%"/>
+    </td>
+  </tr>
+</table>
 
 
 
@@ -19,3 +40,6 @@ At the moment, $\color{lightblue}\sf{LF}$ can trigger its planner at upto 20Hz o
 
 > [!NOTE]
 Our implementation does not implicitly define "events" for triggering $\color{lightblue}\sf{LF}$'s planner. The API is exposed for such use-cases.
+
+
+
