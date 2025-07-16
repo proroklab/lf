@@ -44,8 +44,9 @@ We demonstrate all these use-cases, deployed on teams of 5 [Cambridge Robomaster
 
 ## Citation
 If you find this work to be useful in your research, please consider citing:
+
 ```bibtex
-@article{zhang2025d4orm,
+@article{shankar2025lf,
   title={LF: Online Multi-Robot Path Planning Meets Optimal Trajectory Control},
   author={Shankar, Ajay and Okumura, Keisuke and Prorok, Amanda},
   journal={arXiv preprint arXiv:2507.11464},
