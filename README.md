@@ -1,6 +1,6 @@
+# LF: Online Multi-Robot Path Planning Meets Optimal Trajectory Control
 
-#  LF   <br>   Online Multi-Robot Path Planning Meets Optimal Trajectory Control   
----
+[<img src="https://img.shields.io/badge/arxiv-2507.11464-990000" alt="Arxiv">](https://arxiv.org/abs/2507.11464)
 
 LF is a multi-robot control paradigm to solve point-to-point navigation tasks for a _team_ of holonomic robots with access to the full environment information. It designs a heirarchical structure to multi-robot planning and control: it invokes two processes asynchronously at high frequency:
 - [LaCAM](https://github.com/kei18/lacam3), a <ins>centralized</ins>, discrete, and full-horizon planner for computing collision- and deadlock-free paths rapidly, leveraging recent advances in multi-agent pathfinding (MAPF), and
@@ -39,9 +39,19 @@ We demonstrate all these use-cases, deployed on teams of 5 [Cambridge Robomaster
 > Our implementation does not implicitly define "events" for triggering LF's planner. The API is exposed for such use-cases.
 
 
-### Code
+## Code
 (in review)
 
+## Citation
+If you find this work to be useful in your research, please consider citing:
+```bibtex
+@article{zhang2025d4orm,
+  title={LF: Online Multi-Robot Path Planning Meets Optimal Trajectory Control},
+  author={Shankar, Ajay and Okumura, Keisuke and Prorok, Amanda},
+  journal={arXiv preprint arXiv:2507.11464},
+  year={2025}
+}
+```
 
 -------
 [^1]: Hmm, is "LF" a play on `LF (line feed)` -- the metaphorical end of the line in MAPF+control? Maybe.
